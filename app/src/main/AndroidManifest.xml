@@ -16,36 +16,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_of_Learning_Activity"
-            android:label="Activity_of_Learning_Activity"/>
-        <activity android:name=".Activity_of_Learning_Activity_Lifecycle_1"
-            android:label="Activity_of_Learning_Activity_Lifecycle_1"/>
+        <activity
+            android:name=".Activity_of_Learning_Activity"
+            android:label="Activity_of_Learning_Activity" />
+        <activity
+            android:name=".Activity_of_Learning_Activity_Lifecycle_1"
+            android:label="Activity_of_Learning_Activity_Lifecycle_1" />
         <activity android:name=".Activity_of_Learning_Activity_Lifecycle_2" />
-        <activity android:name=".Activity_of_Learning_Tasks"
-            android:label="Activity_of_Learning_Tasks"/>
+        <activity
+            android:name=".Activity_of_Learning_Tasks"
+            android:label="Activity_of_Learning_Tasks" />
         <activity
             android:name=".Activity_of_Standard_Task"
-            android:launchMode="standard"
-            android:label="Activity_of_Standard_Task"/>
+            android:label="Activity_of_Standard_Task"
+            android:launchMode="standard" />
         <activity
             android:name=".Activity_of_Single_Top"
-            android:launchMode="singleTop"
-            android:label="Activity_of_Single_Top"/>
+            android:label="Activity_of_Single_Top"
+            android:launchMode="singleTop" />
         <activity
             android:name=".Activity_of_Single_Task"
+            android:label="Activity_of_Single_Task"
             android:launchMode="singleTask"
-            android:label="Activity_of_Single_Task"/>
+            android:taskAffinity="com.example.affinity" />
         <activity
             android:name=".Activity_of_Single_Instance"
+            android:label="Activity_of_Single_Instance"
             android:launchMode="singleInstance"
-            android:label="Activity_of_Single_Instance"/>
-        <activity android:name=".Activity_of_Layout_Activity"
-            android:label="Activity_of_Layout_Activity"
-            />
-        <activity android:name=".Activity_of_Passing_Object"
-            android:label="Activity_of_Passing_Object"/>
-        <activity android:name=".Activity_of_Receiving_Object"
-            android:label="Activity_of_Receiving_Object"/>
+            android:taskAffinity="com.example.affinity" />
+        <activity
+            android:name=".Activity_of_Layout_Activity"
+            android:label="Activity_of_Layout_Activity" />
+        <activity
+            android:name=".Activity_of_Passing_Object"
+            android:label="Activity_of_Passing_Object" />
+        <activity
+            android:name=".Activity_of_Receiving_Object"
+            android:label="Activity_of_Receiving_Object" />
     </application>
 
 </manifest>
