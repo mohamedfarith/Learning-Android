@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/single_top1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/this_activity_is_declared_as_single_top"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/single_top_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to single top" />
+
+    <Button
+        android:id="@+id/single_task_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to single task" />
+
+    <Button
+        android:id="@+id/single_instance_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to single instance" />
+
+    <Button
+        android:id="@+id/standard_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to standard" />
+
+</LinearLayout>
