@@ -7,30 +7,24 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button activity_button, layout_button, fragment_button;
+    Button buttonActivity;
+    Button buttonLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout);
-        activity_button = (Button) findViewById(R.id.activity_button);
-        layout_button = (Button) findViewById(R.id.layout_button);
-        fragment_button = (Button) findViewById(R.id.fragment_button);
+        setContentView(R.layout.main_layout);
+        buttonActivity = findViewById(R.id.activityButton);
+        buttonLayout = findViewById(R.id.layoutButton);
 
 
-        activity_button.setOnClickListener(new View.OnClickListener() {
+        buttonActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity_of_Learning_Activity.class);
+                Intent intent = new Intent(MainActivity.this, LearningActivity.class);
                 startActivity(intent);
             }
         });
-        layout_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Activity_of_Layout_Activity.class);
-                startActivity(intent);
-            }
-        });
+
     }
 }
