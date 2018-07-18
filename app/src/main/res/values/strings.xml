@@ -20,10 +20,20 @@
     <string name="this_activity_is_declared_as_single_top">this activity is declared as single top</string>
     <string name="activity_of_single_instance">activity of single instance</string>
     <string name="next_activity">next activity</string>
-
+    <string name="go_to_single_top">go to single top</string>
+    <string name="go_to_single_task">go to single task</string>
+    <string name="go_to_single_instance">go to single instance</string>
     <string name="go_to_standard_task">go to standard task</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="click_to_display_name">click to display name</string>
-
+    <string name="go_to_single_top">go to single top</string>
+    <string name="go_to_single_task">go to single task</string>
+    <string name="go_to_single_instance">go to single instance</string>
+    <string name="go_to_standard">go to standard</string>
+    <string name="this_is_the_activity_of_single_task">this is the activity of single task</string>
+    <string name="go_to_single_top">go to single top</string>
+    <string name="go_to_single_task">go to single task</string>
+    <string name="go_to_single_instance">go to single instance</string>
+    <string name="go_to_standard">go to standard</string>
 </resources>
