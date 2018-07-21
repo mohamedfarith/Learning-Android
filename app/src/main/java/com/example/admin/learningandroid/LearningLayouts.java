@@ -47,7 +47,7 @@ public class LearningLayouts extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
                 break;
             case R.id.btnConstraint:
-                Intent t= new Intent(LearningLayouts.this,ConstriantLayoutActivity.class);
+                Intent t = new Intent(LearningLayouts.this, ConstriantLayoutActivity.class);
                 startActivity(t);
 
 

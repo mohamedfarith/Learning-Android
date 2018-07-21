@@ -8,12 +8,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="143dp"
-        android:layout_height="46dp"
+        android:layout_width="184dp"
+        android:layout_height="127dp"
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
         android:layout_marginTop="84dp"
-        android:text="This is an example of Relative Layout"
+        android:text="This is an example of Constraint Layout"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

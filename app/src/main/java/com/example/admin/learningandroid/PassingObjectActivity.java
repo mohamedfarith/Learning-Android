@@ -9,10 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class PassingObjectActivity extends AppCompatActivity {
-
-    EditText etFirstName, etLastName;
+    public static final String KEY_NAME = "Name";
+    EditText etFirstName;
+    EditText etLastName;
     Button buttonDisplayName;
-    TextView txtTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,17 +22,16 @@ public class PassingObjectActivity extends AppCompatActivity {
         etFirstName = findViewById(R.id.etFirstName);
         etLastName = findViewById(R.id.etLastName);
         buttonDisplayName = findViewById(R.id.buttonDisplay);
-        txtTextView = findViewById(R.id.txtTextView);
 
         buttonDisplayName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            String mFirstName = etFirstName.getText().toString();
-                String mLastName = etFirstName.getText().toString();
+                String mFirstName = etFirstName.getText().toString();
+                String mLastName = etLastName.getText().toString();
 
-                PersonName name = new PersonName(mFirstName,mLastName);
+                PersonName name = new PersonName(mFirstName, mLastName);
                 Intent intent = new Intent(PassingObjectActivity.this, ReceivingObjectActivity.class);
-                intent.putExtra("Name", name);
+                intent.putExtra(KEY_NAME, name);
                 startActivity(intent);
             }
         });

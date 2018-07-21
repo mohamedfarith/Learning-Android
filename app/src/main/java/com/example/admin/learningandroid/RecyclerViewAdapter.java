@@ -10,47 +10,35 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
-    private Context mContext;
-    String[] mStr;
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static String TAG = "StringName";
-    public RecyclerViewAdapter(String[] mStr, Context mContext){
+    String[] mStr;
+    private Context mContext;
+
+    public RecyclerViewAdapter(String[] mStr, Context mContext) {
         this.mStr = mStr;
         this.mContext = mContext;
     }
 
-
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView txtRecyclerView;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-          txtRecyclerView = itemView.findViewById(R.id.txtRecyclerView);
-
-        }
-
-
-    }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_list,parent,false);
-       ViewHolder holder = new ViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_list, parent, false);
+        ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
 
-        ((ViewHolder)holder).txtRecyclerView.setText(mStr[position]);
+        ((ViewHolder) holder).txtRecyclerView.setText(mStr[position]);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 Intent intent;
-                for (int i = holder.getAdapterPosition(); i <position+1 ; i++) {
-                    intent=new Intent(mContext,RecyclerViewList.class);
-                    intent.putExtra("hello",mStr[i]);
+                for (int i = holder.getAdapterPosition(); i < position + 1; i++) {
+                    intent = new Intent(mContext, RecyclerViewList.class);
+                    intent.putExtra("hello", mStr[i]);
                     mContext.startActivity(intent);
                 }
                /* switch(holder.getAdapterPosition()){
@@ -74,5 +62,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemCount() {
         return mStr.length;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView txtRecyclerView;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+            txtRecyclerView = itemView.findViewById(R.id.txtRecyclerView);
+
+        }
+
+
     }
 }

@@ -8,15 +8,16 @@ import android.widget.TextView;
 public class RecyclerViewList extends AppCompatActivity {
 
     TextView txtRecyclerListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_list_item_view);
         txtRecyclerListView = findViewById(R.id.txtRecyclerListView);
         Intent intent = getIntent();
-            String name=  intent.getStringExtra("hello");
-              txtRecyclerListView.setText(name);
-        }
-
+        String name = intent.getStringExtra("hello");
+        txtRecyclerListView.setText(name);
     }
+
+}
 

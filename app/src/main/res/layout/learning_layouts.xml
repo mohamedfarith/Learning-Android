@@ -3,32 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <Button
         android:id="@+id/btnLinear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Linear Layout"/>
+        android:text="Linear Layout" />
 
     <Button
         android:id="@+id/btnRelative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Relative Layout"/>
+        android:text="Relative Layout" />
+
     <Button
         android:id="@+id/btnConstraint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Constraint Layout"/>
+        android:text="Constraint Layout" />
 
-<Button
-    android:id="@+id/btnRecyclerView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="30dp"
-    android:text="Recycler View"/>
+    <Button
+        android:id="@+id/btnRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="Recycler View" />
 
 
 </LinearLayout>

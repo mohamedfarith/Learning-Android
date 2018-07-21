@@ -5,26 +5,6 @@ import android.os.Parcelable;
 
 public class PersonName implements Parcelable {
 
-    private String mFirstName;
-    private  String mLastName;
-    public PersonName(String mFirstName, String mLastName) {
-        this.mFirstName = mFirstName;
-        this.mLastName = mLastName;
-    }
-
-    protected PersonName(Parcel in) {
-        mFirstName = in.readString();
-        mLastName = in.readString();
-    }
-
-
-    public String getFname() {
-        return mFirstName;
-    }
-
-    public String getLname() {
-        return mLastName;
-    }
     public static final Creator<PersonName> CREATOR = new Creator<PersonName>() {
         @Override
         public PersonName createFromParcel(Parcel in) {
@@ -36,6 +16,27 @@ public class PersonName implements Parcelable {
             return new PersonName[size];
         }
     };
+    private String mFirstName;
+    private String mLastName;
+
+    public PersonName(String mFirstName, String mLastName) {
+        this.mFirstName = mFirstName;
+        this.mLastName = mLastName;
+    }
+
+
+    protected PersonName(Parcel in) {
+        mFirstName = in.readString();
+        mLastName = in.readString();
+    }
+
+    public String getFname() {
+        return mFirstName;
+    }
+
+    public String getLname() {
+        return mLastName;
+    }
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
