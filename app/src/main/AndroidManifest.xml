@@ -17,42 +17,45 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity_of_Learning_Activity"
+            android:name=".LearningActivity"
             android:label="Activity_of_Learning_Activity" />
         <activity
-            android:name=".Activity_of_Learning_Activity_Lifecycle_1"
+            android:name=".ActivityLifecycleOne"
             android:label="Activity_of_Learning_Activity_Lifecycle_1" />
-        <activity android:name=".Activity_of_Learning_Activity_Lifecycle_2" />
+        <activity android:name=".ActivityLifecycleTwo" />
         <activity
-            android:name=".Activity_of_Learning_Tasks"
+            android:name=".LearningTasksActivity"
             android:label="Activity_of_Learning_Tasks" />
         <activity
-            android:name=".Activity_of_Standard_Task"
+            android:name=".StandardTaskActivity"
             android:label="Activity_of_Standard_Task"
             android:launchMode="standard" />
         <activity
-            android:name=".Activity_of_Single_Top"
+            android:name=".SingleTopActivity"
             android:label="Activity_of_Single_Top"
             android:launchMode="singleTop" />
         <activity
-            android:name=".Activity_of_Single_Task"
+            android:name=".SingleTaskActivity"
             android:label="Activity_of_Single_Task"
             android:launchMode="singleTask"
             android:taskAffinity="com.example.affinity" />
         <activity
-            android:name=".Activity_of_Single_Instance"
+            android:name=".SingleInstanceActivity"
             android:label="Activity_of_Single_Instance"
             android:launchMode="singleInstance"
             android:taskAffinity="com.example.affinity" />
         <activity
-            android:name=".Activity_of_Layout_Activity"
-            android:label="Activity_of_Layout_Activity" />
-        <activity
-            android:name=".Activity_of_Passing_Object"
+            android:name=".PassingObjectActivity"
             android:label="Activity_of_Passing_Object" />
         <activity
-            android:name=".Activity_of_Receiving_Object"
+            android:name=".ReceivingObjectActivity"
             android:label="Activity_of_Receiving_Object" />
+        <activity android:name=".LearningLayouts" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".RecyclerViewList" />
+        <activity android:name=".LinearLayoutActivty" />
+        <activity android:name=".RelativeLayoutActivity" />
+        <activity android:name=".ConstriantLayoutActivity"></activity>
     </application>
 
 </manifest>

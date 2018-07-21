@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etFirstName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="first_name" />
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:hint="last_name" />
+
+    <Button
+        android:id="@+id/buttonDisplay"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="click to dispaly name" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+</LinearLayout>
