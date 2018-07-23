@@ -5,29 +5,25 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/etFirstName"
+        android:id="@+id/first_name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="first_name" />
 
     <EditText
-        android:id="@+id/etLastName"
+        android:id="@+id/last_name"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:hint="last_name" />
 
     <Button
-        android:id="@+id/buttonDisplay"
+        android:id="@+id/button_display"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="click to dispaly name" />
+        android:text="click to display name" />
 
-    <TextView
-        android:id="@+id/txtContentView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>

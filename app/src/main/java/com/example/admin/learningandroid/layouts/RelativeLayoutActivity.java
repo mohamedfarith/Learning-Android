@@ -1,7 +1,9 @@
-package com.example.admin.learningandroid;
+package com.example.admin.learningandroid.layouts;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.admin.learningandroid.R;
 
 public class RelativeLayoutActivity extends AppCompatActivity {
 

@@ -1,22 +1,25 @@
-package com.example.admin.learningandroid;
+package com.example.admin.learningandroid.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import static com.example.admin.learningandroid.PassingObjectActivity.KEY_NAME;
+import com.example.admin.learningandroid.entity.PersonName;
+import com.example.admin.learningandroid.R;
+
+import static com.example.admin.learningandroid.activity.PassingObjectActivity.KEY_NAME;
 
 
 public class ReceivingObjectActivity extends AppCompatActivity {
-    TextView txtFullName;
+    public TextView txtFullName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receiving_object_layout);
-        txtFullName = (TextView) findViewById(R.id.txtFullName);
+        txtFullName =  findViewById(R.id.txt_full_name);
 
 
         Intent intent = getIntent();

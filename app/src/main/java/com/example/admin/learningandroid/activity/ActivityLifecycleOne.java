@@ -1,4 +1,4 @@
-package com.example.admin.learningandroid;
+package com.example.admin.learningandroid.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.admin.learningandroid.R;
+
 public class ActivityLifecycleOne extends AppCompatActivity {
     public static final String TAG = "activity_1";
-    Button btnNextActivity;
+    public Button btnNextActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +22,8 @@ public class ActivityLifecycleOne extends AppCompatActivity {
         btnNextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ActivityLifecycleOne.this, ActivityLifecycleTwo.class);
-                startActivity(intent);
+                Intent intentLifecycle = new Intent(ActivityLifecycleOne.this, ActivityLifecycleTwo.class);
+                startActivity(intentLifecycle);
             }
         });
     }

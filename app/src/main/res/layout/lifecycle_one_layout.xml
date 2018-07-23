@@ -9,7 +9,7 @@
         android:id="@+id/txtActivityOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/this_is_actiivty_1_for_understanding_activity_life_cycle"
+        android:text="@string/this_is_activity_1_for_understanding_activity_life_cycle"
         android:textSize="25sp" />
 
     <Button

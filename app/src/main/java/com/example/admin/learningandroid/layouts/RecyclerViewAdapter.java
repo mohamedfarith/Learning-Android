@@ -1,4 +1,4 @@
-package com.example.admin.learningandroid;
+package com.example.admin.learningandroid.layouts;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,12 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.TextView;
+
+import com.example.admin.learningandroid.R;
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    public static String TAG = "StringName";
+    public static String TAG = "List";
     String[] mStr;
     private Context mContext;
 
@@ -38,7 +39,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 Intent intent;
                 for (int i = holder.getAdapterPosition(); i < position + 1; i++) {
                     intent = new Intent(mContext, RecyclerViewList.class);
-                    intent.putExtra("hello", mStr[i]);
+                    intent.putExtra("string_name", mStr[i]);
                     mContext.startActivity(intent);
                 }
                /* switch(holder.getAdapterPosition()){
@@ -69,7 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         public ViewHolder(View itemView) {
             super(itemView);
-            txtRecyclerView = itemView.findViewById(R.id.txtRecyclerView);
+            txtRecyclerView = itemView.findViewById(R.id.txt_recycler_view_list);
 
         }
 

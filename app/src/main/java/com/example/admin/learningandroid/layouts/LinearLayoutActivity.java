@@ -1,9 +1,11 @@
-package com.example.admin.learningandroid;
+package com.example.admin.learningandroid.layouts;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LinearLayoutActivty extends AppCompatActivity {
+import com.example.admin.learningandroid.R;
+
+public class LinearLayoutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,3 +14,4 @@ public class LinearLayoutActivty extends AppCompatActivity {
         setContentView(R.layout.linear_layout);
     }
 }
+

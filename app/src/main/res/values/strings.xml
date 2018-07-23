@@ -3,7 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="this_is_actiivty_1_for_understanding_activity_life_cycle">This is Actiivty 1 for understanding activity life cycle</string>
+    <string name="this_is_activity_1_for_understanding_activity_life_cycle">This is Activity 1 for understanding activity life cycle</string>
     <string name="this_is_activity_1_for_understanding_activity_lifecycle">this is activity 1 for understanding activity lifecycle</string>
     <string name="this_is_the_activity_2_for_understanding_activity_lifecycle">this is the activity_2 for understanding activity lifecycle</string>
     <string name="activity_explaining_standard_task">Activity explaining Standard Task</string>
@@ -14,7 +14,7 @@
     <string name="activity">Activity</string>
     <string name="layouts">Layouts</string>
     <string name="fragment">Fragment</string>
-    <string name="pasing_object_during_navigation">pasing object during navigation</string>
+    <string name="passing_object_during_navigation">passing object during navigation</string>
     <string name="tasks">tasks</string>
     <string name="activity_lifecycle">Activity Lifecycle</string>
     <string name="this_activity_is_declared_as_single_top">this activity is declared as single top</string>

@@ -6,41 +6,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.admin.learningandroid.activity.LearningActivity;
+import com.example.admin.learningandroid.layouts.LearningLayouts;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button buttonActivity;
-    Button buttonLayout;
+   public Button buttonActivity;
+   public Button buttonLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_layout);
-        buttonActivity = findViewById(R.id.activityButton);
-        buttonLayout = findViewById(R.id.layoutButton);
+        buttonActivity = findViewById(R.id.activity_button);
+        buttonLayout = findViewById(R.id.layout_button);
+
         buttonActivity.setOnClickListener(this);
         buttonLayout.setOnClickListener(this);
-
 
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.activityButton:
-                Intent intent = new Intent(MainActivity.this, LearningActivity.class);
-                startActivity(intent);
+            case R.id.activity_button:
+                Intent intentActivity = new Intent(MainActivity.this, LearningActivity.class);
+                startActivity(intentActivity);
                 break;
-            case R.id.layoutButton:
-                Intent in = new Intent(MainActivity.this, LearningLayouts.class);
-                startActivity(in);
+            case R.id.layout_button:
+                Intent intentLayouts = new Intent(MainActivity.this, LearningLayouts.class);
+                startActivity(intentLayouts);
                 break;
         }
-      /* buttonActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LearningActivity.class);
-                startActivity(intent);
-            }
-        });*/
+
 
     }
 }

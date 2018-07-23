@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/buttonActivityLifecycle"
+        android:id="@+id/button_activity_lifecycle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
@@ -13,7 +13,7 @@
         android:text="@string/activity_lifecycle" />
 
     <Button
-        android:id="@+id/buttonTasks"
+        android:id="@+id/button_tasks"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
@@ -21,10 +21,10 @@
         android:text="@string/tasks" />
 
     <Button
-        android:id="@+id/buttonPassingObject"
+        android:id="@+id/button_passing_object"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="10dp"
-        android:text="@string/pasing_object_during_navigation" />
+        android:text="@string/passing_object_during_navigation" />
 </LinearLayout>

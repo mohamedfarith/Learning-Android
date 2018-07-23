@@ -1,4 +1,4 @@
-package com.example.admin.learningandroid;
+package com.example.admin.learningandroid.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -16,32 +16,32 @@ public class PersonName implements Parcelable {
             return new PersonName[size];
         }
     };
-    private String mFirstName;
-    private String mLastName;
+    public String firstName;
+    public String lastName;
 
-    public PersonName(String mFirstName, String mLastName) {
-        this.mFirstName = mFirstName;
-        this.mLastName = mLastName;
+    public PersonName(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
 
     protected PersonName(Parcel in) {
-        mFirstName = in.readString();
-        mLastName = in.readString();
+        firstName = in.readString();
+        lastName = in.readString();
     }
 
     public String getFname() {
-        return mFirstName;
+        return firstName;
     }
 
     public String getLname() {
-        return mLastName;
+        return lastName;
     }
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(mFirstName);
-        parcel.writeString(mLastName);
+        parcel.writeString(firstName);
+        parcel.writeString(lastName);
     }
 
     @Override

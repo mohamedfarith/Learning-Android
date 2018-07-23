@@ -5,28 +5,28 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnLinear"
+        android:id="@+id/btn_linear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:text="Linear Layout" />
 
     <Button
-        android:id="@+id/btnRelative"
+        android:id="@+id/btn_relative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:text="Relative Layout" />
 
     <Button
-        android:id="@+id/btnConstraint"
+        android:id="@+id/btn_constraint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:text="Constraint Layout" />
 
     <Button
-        android:id="@+id/btnRecyclerView"
+        android:id="@+id/btn_recycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"

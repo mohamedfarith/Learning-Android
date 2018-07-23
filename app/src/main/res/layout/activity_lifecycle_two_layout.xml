@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/txtActivity2"
+        android:id="@+id/txt_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/this_is_the_activity_2_for_understanding_activity_lifecycle"

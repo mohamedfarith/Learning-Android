@@ -4,7 +4,7 @@
     android:layout_height="70dp">
 
     <TextView
-        android:id="@+id/txtRecyclerView"
+        android:id="@+id/txt_recycler_view_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"

@@ -17,45 +17,52 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LearningActivity"
-            android:label="Activity_of_Learning_Activity" />
+            android:name=".activity.LearningActivity"
+            android:label="Learning Activity" />
         <activity
-            android:name=".ActivityLifecycleOne"
-            android:label="Activity_of_Learning_Activity_Lifecycle_1" />
-        <activity android:name=".ActivityLifecycleTwo" />
+            android:name=".activity.ActivityLifecycleOne"
+            android:label="Activity Lifecycle" />
         <activity
-            android:name=".LearningTasksActivity"
-            android:label="Activity_of_Learning_Tasks" />
+            android:name=".activity.ActivityLifecycleTwo"
+            android:label="Activity Lifecycle" />
         <activity
-            android:name=".StandardTaskActivity"
-            android:label="Activity_of_Standard_Task"
+            android:name=".tasks.LearningTasksActivity"
+            android:label="Different Tasks" />
+        <activity
+            android:name=".tasks.StandardTaskActivity"
+            android:label="Standard Task"
             android:launchMode="standard" />
         <activity
-            android:name=".SingleTopActivity"
-            android:label="Activity_of_Single_Top"
+            android:name=".tasks.SingleTopActivity"
+            android:label="Single Top"
             android:launchMode="singleTop" />
         <activity
-            android:name=".SingleTaskActivity"
-            android:label="Activity_of_Single_Task"
+            android:name=".tasks.SingleTaskActivity"
+            android:label="Single Task"
             android:launchMode="singleTask"
             android:taskAffinity="com.example.affinity" />
         <activity
-            android:name=".SingleInstanceActivity"
-            android:label="Activity_of_Single_Instance"
+            android:name=".tasks.SingleInstanceActivity"
+            android:label="Single Instance"
             android:launchMode="singleInstance"
             android:taskAffinity="com.example.affinity" />
         <activity
-            android:name=".PassingObjectActivity"
-            android:label="Activity_of_Passing_Object" />
+            android:name=".activity.PassingObjectActivity"
+            android:label="Passing Object" />
         <activity
-            android:name=".ReceivingObjectActivity"
-            android:label="Activity_of_Receiving_Object" />
-        <activity android:name=".LearningLayouts" />
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".RecyclerViewList" />
-        <activity android:name=".LinearLayoutActivty" />
-        <activity android:name=".RelativeLayoutActivity" />
-        <activity android:name=".ConstriantLayoutActivity"></activity>
+            android:name=".activity.ReceivingObjectActivity"
+            android:label="Receiving Object" />
+        <activity
+            android:name=".layouts.LearningLayouts"
+            android:label="Layouts" />
+        <activity
+            android:name=".layouts.RecyclerViewActivity"
+            android:label="Layouts" />
+        <activity android:name=".layouts.RecyclerViewList" />
+        <activity android:name=".layouts.LearningLayouts$LinearLayoutActivity" />
+        <activity android:name=".layouts.RelativeLayoutActivity" />
+        <activity android:name=".layouts.ConstraintLayoutActivity" />
+        <activity android:name=".layouts.LinearLayoutActivity"></activity>
     </application>
 
 </manifest>

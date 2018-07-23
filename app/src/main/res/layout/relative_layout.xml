@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/txt_relative_layout"
         android:layout_width="224dp"
         android:layout_height="51dp"
         android:layout_alignParentLeft="true"
@@ -16,6 +17,7 @@
         android:textSize="20sp" />
 
     <Button
+        android:id="@+id/btn_relative_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"

@@ -5,35 +5,12 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/standardTask"
+        android:id="@+id/txt_standard_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="activity explaining standard task"
         android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/singleTopButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to single top" />
-
-    <Button
-        android:id="@+id/singleTaskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to single task" />
-
-    <Button
-        android:id="@+id/singleInstanceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to single instance" />
-
-    <Button
-        android:id="@+id/standardTaskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="go to standard task" />
 
 </LinearLayout>
