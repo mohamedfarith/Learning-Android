@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.admin.learningandroid.R;
+import static com.example.admin.learningandroid.Constants.LIST;
 
 public class RecyclerViewList extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class RecyclerViewList extends AppCompatActivity {
         setContentView(R.layout.recycler_list_item_view);
         txtRecyclerListView = findViewById(R.id.txt_recycler_list_item_view);
         Intent intentRecycler = getIntent();
-        String name = intentRecycler.getStringExtra("string_name");
+        String name = intentRecycler.getStringExtra(LIST);
         txtRecyclerListView.setText(name);
     }
 

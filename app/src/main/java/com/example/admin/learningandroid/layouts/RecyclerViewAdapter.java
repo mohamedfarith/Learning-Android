@@ -10,9 +10,11 @@ import android.widget.TextView;
 
 import com.example.admin.learningandroid.R;
 
+import static com.example.admin.learningandroid.Constants.LIST;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    public static String TAG = "List";
+
     String[] mStr;
     private Context mContext;
 
@@ -39,7 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 Intent intent;
                 for (int i = holder.getAdapterPosition(); i < position + 1; i++) {
                     intent = new Intent(mContext, RecyclerViewList.class);
-                    intent.putExtra("string_name", mStr[i]);
+                    intent.putExtra(LIST, mStr[i]);
                     mContext.startActivity(intent);
                 }
                /* switch(holder.getAdapterPosition()){

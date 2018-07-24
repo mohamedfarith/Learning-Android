@@ -62,7 +62,8 @@
         <activity android:name=".layouts.LearningLayouts$LinearLayoutActivity" />
         <activity android:name=".layouts.RelativeLayoutActivity" />
         <activity android:name=".layouts.ConstraintLayoutActivity" />
-        <activity android:name=".layouts.LinearLayoutActivity"></activity>
+        <activity android:name=".layouts.LinearLayoutActivity" />
+        <activity android:name=".layouts.ModelLoginPage"></activity>
     </application>
 
 </manifest>

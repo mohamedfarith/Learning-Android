@@ -8,7 +8,8 @@ import android.widget.TextView;
 import com.example.admin.learningandroid.entity.PersonName;
 import com.example.admin.learningandroid.R;
 
-import static com.example.admin.learningandroid.activity.PassingObjectActivity.KEY_NAME;
+import static com.example.admin.learningandroid.Constants.KEY_NAME;
+
 
 
 public class ReceivingObjectActivity extends AppCompatActivity {

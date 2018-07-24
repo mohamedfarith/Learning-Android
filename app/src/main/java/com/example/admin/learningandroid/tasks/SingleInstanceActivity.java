@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.admin.learningandroid.R;
 
+
 public class SingleInstanceActivity extends AppCompatActivity {
     public static final String TAG = "SingleInstance";
 

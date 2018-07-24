@@ -10,8 +10,10 @@ import android.widget.EditText;
 import com.example.admin.learningandroid.entity.PersonName;
 import com.example.admin.learningandroid.R;
 
+import static com.example.admin.learningandroid.Constants.KEY_NAME;
+
 public class PassingObjectActivity extends AppCompatActivity {
-    public static final String KEY_NAME = "Name";
+
     public EditText etFirstName;
     public EditText etLastName;
     public Button buttonDisplayName;
