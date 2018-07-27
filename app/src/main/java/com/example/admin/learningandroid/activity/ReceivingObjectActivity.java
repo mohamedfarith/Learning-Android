@@ -11,7 +11,6 @@ import com.example.admin.learningandroid.R;
 import static com.example.admin.learningandroid.Constants.KEY_NAME;
 
 
-
 public class ReceivingObjectActivity extends AppCompatActivity {
     public TextView txtFullName;
 
@@ -20,7 +19,7 @@ public class ReceivingObjectActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.receiving_object_layout);
-        txtFullName =  findViewById(R.id.txt_full_name);
+        txtFullName = findViewById(R.id.txt_full_name);
 
 
         Intent intent = getIntent();

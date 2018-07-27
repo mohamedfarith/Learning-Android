@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <fragment
+        android:id="@+id/sending_fragment"
+        android:name="com.example.admin.learningandroid.fragments.SendingFragment"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="200dp">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/receiving_fragment"
+        android:name="com.example.admin.learningandroid.fragments.ReceivingFragment"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="200dp">
+
+    </fragment>
+
+</LinearLayout>
