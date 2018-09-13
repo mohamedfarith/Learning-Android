@@ -6,24 +6,38 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.zip.Inflater;
+import com.example.admin.learningandroid.activity.LearningActivity;
+import com.example.admin.learningandroid.layouts.LearningLayouts;
 
-public class MainActivity extends AppCompatActivity {
-Button Activity;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+   public Button buttonActivity;
+   public Button buttonLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout);
-        Activity  = (Button)findViewById(R.id.Activity);
+        setContentView(R.layout.main_layout);
+        buttonActivity = findViewById(R.id.activity_button);
+        buttonLayout = findViewById(R.id.layout_button);
 
-        Activity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent hello= new Intent (MainActivity.this, Main3Activity.class);
-                startActivity(hello);
-            }
-        });
+        buttonActivity.setOnClickListener(this);
+        buttonLayout.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.activity_button:
+                Intent intentActivity = new Intent(MainActivity.this, LearningActivity.class);
+                startActivity(intentActivity);
+                break;
+            case R.id.layout_button:
+                Intent intentLayouts = new Intent(MainActivity.this, LearningLayouts.class);
+                startActivity(intentLayouts);
+                break;
+        }
+
 
     }
 }
