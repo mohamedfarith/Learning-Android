@@ -47,12 +47,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                /* switch(holder.getAdapterPosition()){
                     case 0:
                         intent=new Intent(mContext,RecyclerViewList.class);
-                        intent.putExtra("hello",mStr[position]);
+                        intent.putExtra("PassingDataFromReceivingFragmentToSendingFragment",mStr[position]);
                         mContext.startActivity(intent);
                         break;
                     case 1:
                         intent=new Intent(mContext,RecyclerViewList.class);
-                        intent.putExtra("hello",mStr[position]);
+                        intent.putExtra("PassingDataFromReceivingFragmentToSendingFragment",mStr[position]);
                         mContext.startActivity(intent);
                         break;
 

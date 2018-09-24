@@ -13,7 +13,7 @@ public class LearningLayouts extends AppCompatActivity implements View.OnClickLi
     public Button btnLinear;
     public Button btnRelative;
     public Button btnConstraint;
-    public Button btnModelLoginPage;
+    public Button btnModelLoginActivity;
     public Button btnRecyclerView;
 
     @Override
@@ -24,13 +24,13 @@ public class LearningLayouts extends AppCompatActivity implements View.OnClickLi
         btnRelative = findViewById(R.id.btn_relative);
         btnConstraint = findViewById(R.id.btn_constraint);
         btnRecyclerView = findViewById(R.id.btn_recycler_view);
-        btnModelLoginPage = findViewById(R.id.btn_model_login_page);
+        btnModelLoginActivity = findViewById(R.id.btn_model_login_page);
 
         btnLinear.setOnClickListener(this);
         btnRelative.setOnClickListener(this);
         btnConstraint.setOnClickListener(this);
         btnRecyclerView.setOnClickListener(this);
-        btnModelLoginPage.setOnClickListener(this);
+        btnModelLoginActivity.setOnClickListener(this);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class LearningLayouts extends AppCompatActivity implements View.OnClickLi
                 startActivity(intentConstraint);
                 break;
             case R.id.btn_model_login_page:
-                Intent intentModelLogin = new Intent(LearningLayouts.this, ModelLoginPage.class);
+                Intent intentModelLogin = new Intent(LearningLayouts.this, ModelLoginActivity.class);
                 startActivity(intentModelLogin);
                 break;
 

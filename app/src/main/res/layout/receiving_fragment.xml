@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#CE93D8"
+    android:background="@color/colorPrimary"
     tools:context=".fragments.ReceivingFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -20,7 +20,7 @@
         android:layout_width="200dp"
         android:layout_height="60dp"
         android:layout_margin="20dp"
-        android:text="clear text"
+        android:text="@string/clear_text"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

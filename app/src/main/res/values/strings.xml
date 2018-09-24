@@ -17,13 +17,34 @@
     <string name="passing_object_during_navigation">passing object during navigation</string>
     <string name="tasks">tasks</string>
     <string name="activity_lifecycle">Activity Lifecycle</string>
-    <string name="this_activity_is_declared_as_single_top">this activity is declared as single top</string>
     <string name="activity_of_single_instance">activity of single instance</string>
     <string name="next_activity">next activity</string>
 
     <string name="go_to_standard_task">go to standard task</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
+    <string name="clear_text">clear text</string>
+    <string name="example_of_constraint_layout">Example of Constraint layout</string>
+    <string name="button">button</string>
+    <string name="linear_layout">Linear Layout</string>
+    <string name="relative_layout">Relative Layout</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="recycler_view">Recycler View</string>
+    <string name="model_login_page">Model Login Page</string>
+    <string name="this_is_an_example_of_linear_layout">this is an example of linear layout</string>
+    <string name="button_linear_layout">Button</string>
+    <string name="name">Name</string>
+    <string name="registration_number">Registration number</string>
+    <string name="login">login</string>
+    <string name="sign_up">sign up</string>
+    <string name="get_first_name">first_name</string>
+    <string name="get_last_name">last_name</string>
     <string name="click_to_display_name">click to display name</string>
+    <string name="this_is_a_relative_layout">This is a Relative Layout</string>
+    <string name="demo_button">Demo button</string>
+    <string name="this_activity_is_declared_as_single_top">this activity is declared as single top</string>
+    <string name="activity_of_single_task">activity of single task</string>
+    <string name="activity_explaining_standardtask">activity explaining standardTask</string>
+    <string name="click_to_send_data">click to send data</string>
 
 </resources>
