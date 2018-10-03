@@ -53,7 +53,7 @@ public class LearningLayouts extends AppCompatActivity implements View.OnClickLi
                 startActivity(intentConstraint);
                 break;
             case R.id.btn_model_login_page:
-                Intent intentModelLogin= new Intent(LearningLayouts.this,ModelLoginPage.class);
+                Intent intentModelLogin= new Intent(LearningLayouts.this,ModelLoginActivity.class);
                 startActivity(intentModelLogin);
                 break;
 

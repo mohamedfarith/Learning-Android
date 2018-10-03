@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.admin.learningandroid.R;
 
-public class ModelLoginPage extends AppCompatActivity implements View.OnClickListener {
+public class ModelLoginActivity extends AppCompatActivity implements View.OnClickListener {
     public EditText etName;
     public EditText etMarks;
     public EditText etRegistrationNumber;
@@ -20,9 +20,8 @@ public class ModelLoginPage extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.model_login_page);
         etName = findViewById(R.id.et_name);
-        etMarks = findViewById(R.id.et_marks);
         etRegistrationNumber = findViewById(R.id.et_registration);
-        btnSave = findViewById(R.id.btn_save);
+        etMarks = findViewById(R.id.et_marks);
         btnSave.setOnClickListener(this);
     }
 
