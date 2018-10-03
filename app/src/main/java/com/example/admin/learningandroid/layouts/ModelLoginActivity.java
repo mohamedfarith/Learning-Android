@@ -16,7 +16,11 @@ import android.widget.Toast;
 import com.example.admin.learningandroid.MainActivity;
 import com.example.admin.learningandroid.R;
 
+<<<<<<< HEAD:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginPage.java
 public class ModelLoginPage extends AppCompatActivity {
+=======
+public class ModelLoginActivity extends AppCompatActivity implements View.OnClickListener {
+>>>>>>> master:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginActivity.java
     public EditText etName;
     public EditText etRegistrationNumber;
     public Button btnSignUp;
@@ -33,8 +37,14 @@ public class ModelLoginPage extends AppCompatActivity {
         setContentView(R.layout.model_login_page);
         etName = findViewById(R.id.et_name);
         etRegistrationNumber = findViewById(R.id.et_registration);
+<<<<<<< HEAD:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginPage.java
         btnSignUp = findViewById(R.id.btn_sign_up);
         btnLogin = findViewById(R.id.btn_login);
+=======
+        etMarks = findViewById(R.id.et_marks);
+        btnSave.setOnClickListener(this);
+    }
+>>>>>>> master:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginActivity.java
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
