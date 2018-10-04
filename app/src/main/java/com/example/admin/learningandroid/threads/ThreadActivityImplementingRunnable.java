@@ -36,7 +36,7 @@ public class ThreadActivityImplementingRunnable extends AppCompatActivity implem
         public void run() {
             for (int i = 0; i < 10; i++) {
                 Log.d(THREAD, "onClick " + i);
-                if (i == 9) {
+                if (i == 5) {
                     //Updating the UI by using Handler
                     threadActivityHandler.post(new Runnable() {
                         @Override

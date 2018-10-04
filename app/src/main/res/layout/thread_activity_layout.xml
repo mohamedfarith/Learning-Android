@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_thread_extends_thread"
+        android:layout_margin="20dp"
+        android:text="@string/thread_extending_thread"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_thread_using_runnable_interface"
+        android:layout_margin="20dp"
+        android:text="@string/thread_using_runnable_interface"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_network_call"
+        android:layout_margin="20dp"
+        android:text="@string/network_call_to_an_api_without_using_library"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_network_call_using_library"
+        android:layout_margin="20dp"
+        android:text="@string/network_call_using_retrofit_library"/>
+
+</LinearLayout>

@@ -18,13 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:textSize="20sp" />
-    <Button
-        android:id="@+id/btn_thread_using_runnable"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="@string/thread_using_runnable"
-        android:textSize="15sp" />
+
 
 
 </LinearLayout>

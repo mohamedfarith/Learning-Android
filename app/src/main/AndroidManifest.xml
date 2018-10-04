@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.admin.learningandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,22 +33,22 @@
             android:label="Different Tasks" />
         <activity
             android:name=".tasks.StandardTaskActivity"
-            android:label="Standard Task"
-            android:launchMode="standard" />
+            android:label="Standard Task" />
+        <!-- android:launchMode="standard" /> -->
         <activity
             android:name=".tasks.SingleTopActivity"
-            android:label="Single Top"
-            android:launchMode="singleTop" />
+            android:label="Single Top" />
+        <!-- android:launchMode="singleTop" /> -->
         <activity
             android:name=".tasks.SingleTaskActivity"
-            android:label="Single Task"
-            android:launchMode="singleTask"
-            android:taskAffinity="com.example.affinity" />
+            android:label="Single Task" />
+        <!-- android:launchMode="singleTask" -->
+        <!-- android:taskAffinity="com.example.affinity" /> -->
         <activity
             android:name=".tasks.SingleInstanceActivity"
-            android:label="Single Instance"
-            android:launchMode="singleInstance"
-            android:taskAffinity="com.example.affinity" />
+            android:label="Single Instance" />
+        <!-- android:launchMode="singleInstance" -->
+        <!-- android:taskAffinity="com.example.affinity" /> -->
         <activity
             android:name=".activity.PassingObjectActivity"
             android:label="Passing Object" />
@@ -63,14 +66,12 @@
         <activity android:name=".layouts.RelativeLayoutActivity" />
         <activity android:name=".layouts.ConstraintLayoutActivity" />
         <activity android:name=".layouts.LinearLayoutActivity" />
-<<<<<<< HEAD
-        <activity android:name=".layouts.ModelLoginPage" />
+        <activity android:name=".layouts.ModelLoginActivity" />
         <activity android:name=".fragments.FragmentActivity" />
         <activity android:name=".threads.ThreadActivityExtendingThread" />
-        <activity android:name=".threads.ThreadActivityImplementingRunnable"></activity>
-=======
-        <activity android:name=".layouts.ModelLoginActivity"></activity>
->>>>>>> master
+        <activity android:name=".threads.ThreadActivityImplementingRunnable" />
+        <activity android:name=".threads.MakeAPICallActivity" />
+        <activity android:name=".threads.ThreadActivity"></activity>
     </application>
 
 </manifest>

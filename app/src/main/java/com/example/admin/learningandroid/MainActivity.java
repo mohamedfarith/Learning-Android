@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.admin.learningandroid.activity.LearningActivity;
 import com.example.admin.learningandroid.fragments.FragmentActivity;
 import com.example.admin.learningandroid.layouts.LearningLayouts;
+import com.example.admin.learningandroid.threads.ThreadActivity;
 import com.example.admin.learningandroid.threads.ThreadActivityExtendingThread;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentFragments);
                 break;
             case R.id.thread_button:
-                Intent intentThreads = new Intent(MainActivity.this, ThreadActivityExtendingThread.class);
+                Intent intentThreads = new Intent(MainActivity.this, ThreadActivity.class);
                 startActivity(intentThreads);
         }
 

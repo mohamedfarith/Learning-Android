@@ -16,11 +16,8 @@ import android.widget.Toast;
 import com.example.admin.learningandroid.MainActivity;
 import com.example.admin.learningandroid.R;
 
-<<<<<<< HEAD:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginPage.java
-public class ModelLoginPage extends AppCompatActivity {
-=======
-public class ModelLoginActivity extends AppCompatActivity implements View.OnClickListener {
->>>>>>> master:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginActivity.java
+
+public class ModelLoginActivity extends AppCompatActivity  {
     public EditText etName;
     public EditText etRegistrationNumber;
     public Button btnSignUp;
@@ -28,7 +25,6 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
     String mName;
     String mRegistrationNumber;
     public String name;
-    public static final double LENGTH_S = 0.2;
 
 
     @Override
@@ -37,14 +33,11 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.model_login_page);
         etName = findViewById(R.id.et_name);
         etRegistrationNumber = findViewById(R.id.et_registration);
-<<<<<<< HEAD:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginPage.java
+
         btnSignUp = findViewById(R.id.btn_sign_up);
         btnLogin = findViewById(R.id.btn_login);
-=======
-        etMarks = findViewById(R.id.et_marks);
-        btnSave.setOnClickListener(this);
-    }
->>>>>>> master:app/src/main/java/com/example/admin/learningandroid/layouts/ModelLoginActivity.java
+
+
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,15 +54,10 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
                 int mCount = mName.length();
                 //condition for various credential check
                 if (mCount <= 3) {
-                    //Toast.makeText(ModelLoginPage.this, "Enter Valid Name",Toast.LENGTH_SHORT).show();
-                    Context context = getApplicationContext();
-                    CharSequence text = "Enter Valid Name";
-                    int duration = 1000;
-                    Toast toast = Toast.makeText(context, text, duration);
-                    toast.show();
+                    Toast.makeText(ModelLoginActivity.this, "Enter Valid Name", Toast.LENGTH_SHORT).show();
                 } else {
                     if (mRegistrationNumber.length() < 1) {
-                        Toast.makeText(ModelLoginPage.this, "enter valid register number", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ModelLoginActivity.this, "enter valid register number", Toast.LENGTH_SHORT).show();
                     } else {
 
                         if (savedName.equals("") && savedRegNumber.equals("")) {
@@ -80,13 +68,12 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
                             addData.putString("NAME", mName);
                             addData.putString("REGISTRATION_NUMBER", mRegistrationNumber);
                             addData.apply();
-                            Toast.makeText(ModelLoginPage.this, "Successfully saved", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ModelLoginActivity.this, "Successfully saved", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(ModelLoginPage.this, "Already signed up it seems", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ModelLoginActivity.this, "Already signed up it seems", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
-                Toast.makeText(ModelLoginPage.this, "hai", Toast.LENGTH_SHORT).show();
             }
 
 
@@ -95,7 +82,7 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(ModelLoginPage.this, "hai hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ModelLoginActivity.this, "hai hello", Toast.LENGTH_SHORT).show();
 
                 //Retrieving shared preference data
                 SharedPreferences preference = getSharedPreferences("SAVE_DATA", MODE_PRIVATE);
@@ -106,14 +93,14 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
                 if (name != "" && registrationNumber != "") {
                     if (name.equals(etName.getText().toString())) {
                         if (registrationNumber.equals(etRegistrationNumber.getText().toString())) {
-                            Toast.makeText(ModelLoginPage.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ModelLoginActivity.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
 
                         }
                     } else {
-                        Toast.makeText(ModelLoginPage.this, "not LOGGED IN before,please LOGIN", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ModelLoginActivity.this, "not LOGGED IN before,please LOGIN", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(ModelLoginPage.this, "not SIGNED IN before,please SIGN UP", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ModelLoginActivity.this, "not SIGNED IN before,please SIGN UP", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -122,6 +109,7 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
 
 
 }
+
 
 
 

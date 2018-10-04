@@ -17,7 +17,6 @@ public class ThreadActivityExtendingThread extends AppCompatActivity implements 
 
     public Button btnStartThread;
     public TextView txtStartThread;
-    public Button runnableThread;
     public Handler threadActivityHandler = new Handler();
 
     @Override
@@ -26,9 +25,7 @@ public class ThreadActivityExtendingThread extends AppCompatActivity implements 
         setContentView(R.layout.thread_extending_thread);
         btnStartThread = findViewById(R.id.btn_start_thread);
         txtStartThread = findViewById(R.id.txt_start_thread);
-        runnableThread = findViewById(R.id.btn_thread_using_runnable);
         btnStartThread.setOnClickListener(this);
-        runnableThread.setOnClickListener(this);
     }
 
     @Override
@@ -38,9 +35,7 @@ public class ThreadActivityExtendingThread extends AppCompatActivity implements 
                 ExampleThread thread = new ExampleThread();
                 thread.start();
                 break;
-            case R.id.btn_thread_using_runnable:
-                Intent intentThreadRunnable = new Intent(ThreadActivityExtendingThread.this, ThreadActivityImplementingRunnable.class);
-                startActivity(intentThreadRunnable);
+
         }
     }
 
@@ -49,7 +44,7 @@ public class ThreadActivityExtendingThread extends AppCompatActivity implements 
         public void run() {
             for (int i = 0; i < 10; i++) {
                 Log.d(THREAD, "onClick " + i);
-                if (i == 9) {
+                if (i == 5) {
                     //Updating the UI by using Handler
                     threadActivityHandler.post(new Runnable() {
                         @Override
