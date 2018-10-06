@@ -39,9 +39,9 @@ public class ReceivingFragment extends android.support.v4.app.Fragment {
     }
 
     public void clearingDataInSendingFragment() {
-        PassingDataFromReceivingFragmentToSendingFragment mData;
-        mData = (PassingDataFromReceivingFragmentToSendingFragment) getActivity();
-        mData.passingDataFromReceivingFragmentToSendingFragment();
+        DataTransferBetweenFragments mData;
+        mData = (DataTransferBetweenFragments) getActivity();
+        mData.clearData();
     }
 
 
