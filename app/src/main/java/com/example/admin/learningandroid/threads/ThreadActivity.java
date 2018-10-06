@@ -26,7 +26,7 @@ public class ThreadActivity extends AppCompatActivity implements View.OnClickLis
         btnThreadExtendingThread.setOnClickListener(this);
         btnThreadUsingRunnableInterface.setOnClickListener(this);
         btnNetworkCallWithoutLibrary.setOnClickListener(this);
-
+        getBtnNetworkCallUsingLibrary.setOnClickListener(this);
     }
 
     @Override
@@ -43,6 +43,11 @@ public class ThreadActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_network_call:
                 Intent networkCallIntent = new Intent(ThreadActivity.this,MakeAPICallActivity.class);
                 startActivity(networkCallIntent);
+                break;
+            case R.id.btn_network_call_using_library:
+                Intent retrofitNetworkCallIntent = new Intent(ThreadActivity.this,ApiCallUsingRetrofit.class);
+                startActivity(retrofitNetworkCallIntent);
+                break;
         }
     }
 }

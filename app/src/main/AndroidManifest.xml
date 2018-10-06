@@ -71,7 +71,8 @@
         <activity android:name=".threads.ThreadActivityExtendingThread" />
         <activity android:name=".threads.ThreadActivityImplementingRunnable" />
         <activity android:name=".threads.MakeAPICallActivity" />
-        <activity android:name=".threads.ThreadActivity"></activity>
+        <activity android:name=".threads.ThreadActivity" />
+        <activity android:name=".threads.ApiCallUsingRetrofit"></activity>
     </application>
 
 </manifest>

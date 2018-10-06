@@ -35,7 +35,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.zip.Inflater;
 
-import static com.example.admin.learningandroid.Constants.PRESSURE;
+
 import static com.example.admin.learningandroid.Constants.WEATHER_URL;
 
 /* this activity class is used to implement a network call without using library
@@ -79,7 +79,7 @@ public class MakeAPICallActivity extends AppCompatActivity {
         String humidity;
         String main;
         String description;
-        ArrayList<WeatherAPIModelClass> weatherDataList = new ArrayList<>();
+         ArrayList<WeatherAPIModelClass> weatherDataList = new ArrayList<>();
         try {
             getData = new JSONObject(jsonResponse);
             JSONArray listArray = getData.getJSONArray("list");
@@ -153,14 +153,14 @@ class WeatherDataRecyclerViewAdapter extends
     public void onBindViewHolder(WeatherDataViewHolder holder, int position) {
         String message = null;
         WeatherAPIModelClass weatherDataDisplay = weatherList.get(position);
-        message = "pressure "+weatherDataDisplay.getPressure();
-        holder.mPressure.setText(message);
-        message = "humidity "+weatherDataDisplay.getHumidity();
-        holder.mHumidity.setText(message);
-        message = "Main "+weatherDataDisplay.getMain();
-        holder.mMain.setText(message);
-        message = "Description "+weatherDataDisplay.getDescription();
-        holder.mDescription.setText(message);
+        //message = "pressure "+weatherDataDisplay.getPressure();
+        holder.mPressure.setText(weatherDataDisplay.getPressure());
+       // message = "humidity "+weatherDataDisplay.getHumidity();
+        holder.mHumidity.setText(weatherDataDisplay.getHumidity());
+       // message = "Main "+weatherDataDisplay.getMain();
+        holder.mMain.setText(weatherDataDisplay.getMain());
+       // message = "Description "+weatherDataDisplay.getDescription();
+        holder.mDescription.setText(weatherDataDisplay.getDescription());
 
 
     }
