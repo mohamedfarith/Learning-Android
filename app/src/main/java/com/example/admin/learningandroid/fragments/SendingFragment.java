@@ -16,7 +16,7 @@ import com.example.admin.learningandroid.R;
 
 public class SendingFragment extends android.support.v4.app.Fragment {
     private static final String mTAG = "Sending Fragment";
-    public PassingDataFromSendingFragmentToReceivingFragment data;
+    public DataTransferBetweenFragments data;
     public EditText etFromSendingFragment;
     public Button buttonSendData;
     public String strText;
@@ -39,7 +39,7 @@ public class SendingFragment extends android.support.v4.app.Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        data = (PassingDataFromSendingFragmentToReceivingFragment) getActivity();
+        data = (DataTransferBetweenFragments) getActivity();
         Log.v(mTAG, "onAttach of Sending Fragment");
     }
 
@@ -53,7 +53,7 @@ public class SendingFragment extends android.support.v4.app.Fragment {
             @Override
             public void onClick(View view) {
                 strText = etFromSendingFragment.getText().toString();
-                data.passingDataFromSendingFragmentToReceivingFragment(strText);
+                data.setData(strText);
             }
         });
     }
