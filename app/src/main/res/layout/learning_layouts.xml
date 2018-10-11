@@ -9,33 +9,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Linear Layout" />
+        android:text="@string/linear_layout" />
 
     <Button
         android:id="@+id/btn_relative"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Relative Layout" />
+        android:text="@string/relative_layout" />
 
     <Button
         android:id="@+id/btn_constraint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Constraint Layout" />
+        android:text="@string/constraint_layout" />
 
     <Button
         android:id="@+id/btn_recycler_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Recycler View" />
+        android:text="@string/recycler_view" />
     <Button
         android:id="@+id/btn_model_login_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
-        android:text="Model Login Page" />
+        android:text="@string/model_login_page" />
 
 </LinearLayout>

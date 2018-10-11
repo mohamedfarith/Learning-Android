@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.admin.learningandroid.R;
+
 import static com.example.admin.learningandroid.Constants.LIST;
 
 public class RecyclerViewList extends AppCompatActivity {
 
 
-     public TextView txtRecyclerListView;
+    public TextView txtRecyclerListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="standard task" />
+        android:text="@string/standard_task" />
 
     <Button
         android:id="@+id/btn_single_top"
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="single top" />
+        android:text="@string/single_top" />
 
     <Button
         android:id="@+id/btn_single_task"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="single task" />
+        android:text="@string/single_task" />
 
     <Button
         android:id="@+id/btn_single_instance"
@@ -34,6 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:text="single instance" />
+        android:text="@string/single_instance" />
 
 </LinearLayout>

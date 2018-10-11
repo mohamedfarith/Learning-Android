@@ -13,7 +13,7 @@
         android:layout_marginLeft="89dp"
         android:layout_marginStart="89dp"
         android:layout_marginTop="160dp"
-        android:text="This is a Relative Layout"
+        android:text="@string/this_is_a_relative_layout"
         android:textSize="20sp" />
 
     <Button
@@ -25,5 +25,5 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="118dp"
         android:layout_marginStart="118dp"
-        android:text="Demo button" />
+        android:text="@string/demo_button" />
 </RelativeLayout>
