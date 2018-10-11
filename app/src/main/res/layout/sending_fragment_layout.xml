@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#CE93D8"
+    android:background="@color/colorSendingFragment"
     android:orientation="vertical"
     tools:context=".fragments.SendingFragment">
 
@@ -19,6 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:layout_gravity="center"
-        android:text="click to send data"/>
+        android:text="@string/click_to_send_data"/>
 
 </LinearLayout>

@@ -1,117 +1,94 @@
 package com.example.admin.learningandroid.layouts;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.ColorSpace;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.admin.learningandroid.MainActivity;
 import com.example.admin.learningandroid.R;
 
-
-public class ModelLoginActivity extends AppCompatActivity  {
-    public EditText etName;
-    public EditText etRegistrationNumber;
-    public Button btnSignUp;
-    public Button btnLogin;
-    String mName;
-    String mRegistrationNumber;
-    public String name;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.model_login_page);
-        etName = findViewById(R.id.et_name);
-        etRegistrationNumber = findViewById(R.id.et_registration);
-
-        btnSignUp = findViewById(R.id.btn_sign_up);
-        btnLogin = findViewById(R.id.btn_login);
+import static com.example.admin.learningandroid.Constants.NAME;
+import static com.example.admin.learningandroid.Constants.REGISTRATION_NUMBER;
+import static com.example.admin.learningandroid.Constants.SAVE_DATA;
 
 
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                //To make only one time sign up
-                SharedPreferences firstRetrieve = getSharedPreferences("SAVE_DATA", MODE_PRIVATE);
-                String savedName = firstRetrieve.getString("NAME", "");
-                String savedRegNumber = firstRetrieve.getString("REGISTRATION_NUMBER", "");
+    public class ModelLoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-                mName = etName.getText().toString().trim();
-                mRegistrationNumber = etRegistrationNumber.getText().toString().trim();
+        public EditText etName;
+        public EditText etRegistrationNumber;
+        public Button btnSignUp;
+        public Button btnLogin;
+        String mName;
+        String mRegistrationNumber;
+        SharedPreferences userPreference;
 
-                int mCount = mName.length();
-                //condition for various credential check
-                if (mCount <= 3) {
-                    Toast.makeText(ModelLoginActivity.this, "Enter Valid Name", Toast.LENGTH_SHORT).show();
-                } else {
-                    if (mRegistrationNumber.length() < 1) {
-                        Toast.makeText(ModelLoginActivity.this, "enter valid register number", Toast.LENGTH_SHORT).show();
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.model_login_page);
+            etName = findViewById(R.id.et_name);
+            etRegistrationNumber = findViewById(R.id.et_registration);
+            btnSignUp = findViewById(R.id.btn_sign_up);
+            btnLogin = findViewById(R.id.btn_login);
+            btnSignUp.setOnClickListener(this);
+            btnLogin.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            //variables that is used to store the userPreference data
+            String userName;
+            String userRegistrationNumber;
+            switch (view.getId()) {
+                case R.id.btn_sign_up:
+
+                    userPreference = getSharedPreferences(SAVE_DATA, MODE_PRIVATE);
+                    userName = userPreference.getString(NAME, "");
+                    userRegistrationNumber = userPreference.getString(REGISTRATION_NUMBER, "");
+                    mName = etName.getText().toString().trim();
+                    mRegistrationNumber = etRegistrationNumber.getText().toString();
+                    String message = "";
+                    if (mName.length() <= 3) {
+                        message = "Enter Valid name";
+                    } else if (TextUtils.isEmpty(mRegistrationNumber)) {
+                        message = "enter valid register number";
+                    } else if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(userRegistrationNumber)) {
+                        userPreference = getSharedPreferences(SAVE_DATA, MODE_PRIVATE);
+                        SharedPreferences.Editor addData = userPreference.edit();
+                        addData.putString(NAME, mName);
+                        addData.putString(REGISTRATION_NUMBER, mRegistrationNumber);
+                        addData.apply();
+                        message = "Successfully saved";
                     } else {
+                        message = "Already signed up it seems";
+                    }
+                    Toast.makeText(ModelLoginActivity.this, message, Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btn_login:
+                    userPreference = getSharedPreferences(SAVE_DATA, MODE_PRIVATE);
+                    userName = userPreference.getString(NAME, "");
+                    userRegistrationNumber = userPreference.getString(REGISTRATION_NUMBER, "");
+                    //making sure that the user do not logs in with empty data
 
-                        if (savedName.equals("") && savedRegNumber.equals("")) {
-
-                            //Loading data in shared preference
-                            SharedPreferences saveData = getSharedPreferences("SAVE_DATA", MODE_PRIVATE);
-                            SharedPreferences.Editor addData = saveData.edit();
-                            addData.putString("NAME", mName);
-                            addData.putString("REGISTRATION_NUMBER", mRegistrationNumber);
-                            addData.apply();
-                            Toast.makeText(ModelLoginActivity.this, "Successfully saved", Toast.LENGTH_SHORT).show();
+                    if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(userRegistrationNumber)) {
+                        if (userName.equals(etName.getText().toString().trim()) && (userRegistrationNumber.equals(etRegistrationNumber.getText().toString()))) {
+                            message = "Successfully logged in";
                         } else {
-                            Toast.makeText(ModelLoginActivity.this, "Already signed up it seems", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }
-            }
-
-
-        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(ModelLoginActivity.this, "hai hello", Toast.LENGTH_SHORT).show();
-
-                //Retrieving shared preference data
-                SharedPreferences preference = getSharedPreferences("SAVE_DATA", MODE_PRIVATE);
-                String name = preference.getString("NAME", "");
-                String registrationNumber = preference.getString("REGISTRATION_NUMBER", "");
-
-                //making sure that the user do not logs in with empty data
-                if (name != "" && registrationNumber != "") {
-                    if (name.equals(etName.getText().toString())) {
-                        if (registrationNumber.equals(etRegistrationNumber.getText().toString())) {
-                            Toast.makeText(ModelLoginActivity.this, "Successfully Logged in", Toast.LENGTH_SHORT).show();
-
+                            message = "invalid login";
                         }
                     } else {
-                        Toast.makeText(ModelLoginActivity.this, "not LOGGED IN before,please LOGIN", Toast.LENGTH_SHORT).show();
+                        message = "not signed in before please sign in";
                     }
-                } else {
-                    Toast.makeText(ModelLoginActivity.this, "not SIGNED IN before,please SIGN UP", Toast.LENGTH_SHORT).show();
-                }
+                    Toast.makeText(ModelLoginActivity.this, message, Toast.LENGTH_SHORT).show();
             }
-        });
 
+
+        }
     }
-
-
-}
-
-
-
-
-
 
