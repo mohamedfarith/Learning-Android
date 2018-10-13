@@ -34,21 +34,21 @@
         <activity
             android:name=".tasks.StandardTaskActivity"
             android:label="Standard Task"
-         android:launchMode="standard" />
+            android:launchMode="standard" />
         <activity
             android:name=".tasks.SingleTopActivity"
             android:label="Single Top"
-         android:launchMode="singleTop" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".tasks.SingleTaskActivity"
             android:label="Single Task"
-         android:launchMode="singleTask"
-         android:taskAffinity="com.example.affinity" />
+            android:launchMode="singleTask"
+            android:taskAffinity="com.example.affinity" />
         <activity
             android:name=".tasks.SingleInstanceActivity"
             android:label="Single Instance"
-         android:launchMode="singleInstance"
-         android:taskAffinity="com.example.affinity" />
+            android:launchMode="singleInstance"
+            android:taskAffinity="com.example.affinity" />
         <activity
             android:name=".activity.PassingObjectActivity"
             android:label="Passing Object" />
@@ -72,8 +72,10 @@
         <activity android:name=".threads.ThreadActivityImplementingRunnable" />
         <activity android:name=".threads.MakeAPICallActivity" />
         <activity android:name=".threads.ThreadActivity" />
-        <activity android:name=".threads.ApiCallUsingRetrofit"/>
+        <activity android:name=".threads.ApiCallUsingRetrofit" />
+        <activity android:name=".services.ServiceActivity" />
 
+        <service android:name=".services.WeatherIntentService" />
     </application>
 
 </manifest>

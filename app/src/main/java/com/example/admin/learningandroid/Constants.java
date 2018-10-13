@@ -9,5 +9,6 @@ public class Constants {
     public static final String SAVE_DATA = "SAVE_DATA";
     public static final String NAME = "NAME";
     public static final String REGISTRATION_NUMBER = "REGISTRATION_NUMBER";
+    public static String NOTIFICATION = "com.example.admin.learningandroid.WeatherIntentService";
 
 }

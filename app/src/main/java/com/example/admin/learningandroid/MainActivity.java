@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.admin.learningandroid.activity.LearningActivity;
 import com.example.admin.learningandroid.fragments.FragmentActivity;
 import com.example.admin.learningandroid.layouts.LearningLayouts;
+import com.example.admin.learningandroid.services.ServiceActivity;
 import com.example.admin.learningandroid.threads.ThreadActivity;
 import com.example.admin.learningandroid.threads.ThreadActivityExtendingThread;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public Button buttonLayout;
     public Button buttonFragments;
     public Button buttonThreads;
+    public Button buttonService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +28,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLayout = findViewById(R.id.layout_button);
         buttonFragments = findViewById(R.id.fragment_button);
         buttonThreads = findViewById(R.id.thread_button);
+        buttonService = findViewById(R.id.service_button);
 
         buttonFragments.setOnClickListener(this);
         buttonActivity.setOnClickListener(this);
         buttonLayout.setOnClickListener(this);
         buttonThreads.setOnClickListener(this);
-
+        buttonService.setOnClickListener(this);
     }
 
     @Override
@@ -52,6 +55,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.thread_button:
                 Intent intentThreads = new Intent(MainActivity.this, ThreadActivity.class);
                 startActivity(intentThreads);
+                break;
+            case R.id.service_button:
+                Intent intentService = new Intent(MainActivity.this, ServiceActivity.class);
+                startActivity(intentService);
+                break;
+
         }
 
 

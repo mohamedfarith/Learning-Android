@@ -39,4 +39,14 @@
         android:layout_marginTop="10dp"
         android:text="@string/thread"
         android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/service_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/service"
+        android:textSize="15sp" />
+
 </LinearLayout>
