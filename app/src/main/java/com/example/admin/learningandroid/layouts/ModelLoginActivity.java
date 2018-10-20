@@ -15,7 +15,9 @@ import static com.example.admin.learningandroid.Constants.NAME;
 import static com.example.admin.learningandroid.Constants.REGISTRATION_NUMBER;
 import static com.example.admin.learningandroid.Constants.SAVE_DATA;
 
+
 public class ModelLoginActivity extends AppCompatActivity implements View.OnClickListener {
+
     public EditText etName;
     public EditText etRegistrationNumber;
     public Button btnSignUp;
@@ -30,7 +32,6 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.model_login_page);
         etName = findViewById(R.id.et_name);
         etRegistrationNumber = findViewById(R.id.et_registration);
-
         btnSignUp = findViewById(R.id.btn_sign_up);
         btnLogin = findViewById(R.id.btn_login);
         btnSignUp.setOnClickListener(this);
@@ -88,5 +89,4 @@ public class ModelLoginActivity extends AppCompatActivity implements View.OnClic
 
     }
 }
-
 

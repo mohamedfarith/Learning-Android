@@ -40,11 +40,25 @@
     <string name="get_first_name">first_name</string>
     <string name="get_last_name">last_name</string>
     <string name="click_to_display_name">click to display name</string>
+
+    <string name="start_thread">start thread</string>
+    <string name="thread">thread</string>
+    <string name="thread_using_runnable">thread using runnable</string>
+    <string name="start_thread_runnable">start thread</string>
+    <string name="thread_extending_thread">thread extending thread</string>
+    <string name="thread_using_runnable_interface">thread using runnable interface</string>
+    <string name="network_call_to_an_api_without_using_library">network call to an api without using library</string>
+    <string name="network_call_using_retrofit_library">network call using retrofit library</string>
+    <string name="pressure">Pressure</string>
+
     <string name="this_is_a_relative_layout">This is a Relative Layout</string>
     <string name="demo_button">Demo button</string>
     <string name="this_activity_is_declared_as_single_top">this activity is declared as single top</string>
     <string name="activity_of_single_task">activity of single task</string>
     <string name="activity_explaining_standardtask">activity explaining standardTask</string>
     <string name="click_to_send_data">click to send data</string>
+    <string name="thread_message">thread completed</string>
+    <string name="string_pressure">pressure:</string>
+
 
 </resources>
