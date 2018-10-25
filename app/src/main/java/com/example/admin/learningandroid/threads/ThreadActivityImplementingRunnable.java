@@ -13,9 +13,10 @@ import com.example.admin.learningandroid.R;
 import static com.example.admin.learningandroid.Constants.THREAD;
 
 public class ThreadActivityImplementingRunnable extends AppCompatActivity implements View.OnClickListener {
-   public Button btnStartRunnableThread;
-   public TextView txtStartRunnableThread;
-   Handler threadActivityHandler = new Handler();
+    public Button btnStartRunnableThread;
+    public TextView txtStartRunnableThread;
+    Handler threadActivityHandler = new Handler();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class ThreadActivityImplementingRunnable extends AppCompatActivity implem
         new Thread(thread).start();
     }
 
-    class ExampleRunnableThread implements Runnable{
+    class ExampleRunnableThread implements Runnable {
         @Override
         public void run() {
             for (int i = 0; i < 10; i++) {
@@ -41,7 +42,7 @@ public class ThreadActivityImplementingRunnable extends AppCompatActivity implem
                     threadActivityHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            txtStartRunnableThread.setText("thread completed");
+                            txtStartRunnableThread.setText(R.string.thread_message);
                         }
                     });
                 }

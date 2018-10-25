@@ -5,24 +5,43 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/btn_start_intent_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/start_intent_service" />
+
+    <Button
         android:id="@+id/btn_start_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:text="@string/start_service" />
+
+    <Button
+        android:id="@+id/btn_bind_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/bind_service" />
+    <Button
+        android:id="@+id/btn_bound_data_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="bound data" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
-    </android.support.v7.widget.RecyclerView>
+        android:padding="10dp" />
 
 </LinearLayout>

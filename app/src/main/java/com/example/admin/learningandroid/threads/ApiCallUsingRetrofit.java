@@ -5,18 +5,14 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.admin.learningandroid.R;
-import com.example.admin.learningandroid.entity.ListDataRetrieveModelClass;
-import com.example.admin.learningandroid.entity.RetrofitWeatherApiModelClass;
-import com.example.admin.learningandroid.entity.Weather;
-import com.example.admin.learningandroid.entity.WeatherAPIModelClass;
+import com.example.admin.learningandroid.entity.WeatherAPIModel;
+import com.example.admin.learningandroid.entity.WeatherDataAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,59 +23,54 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.example.admin.learningandroid.Constants.BASE_WEATHER_URL;
 
 public class ApiCallUsingRetrofit extends AppCompatActivity {
-    ArrayList<WeatherAPIModelClass> weatherAPIModelClassArrayList = new ArrayList<>();
+    ArrayList<WeatherAPIModel> weatherAPIModelClassArrayList = new ArrayList<>();
+    ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.retrofit_weather_api_layout);
         final RecyclerView weatherDataDisplay = findViewById(R.id.retrofit_weather_api_recycler_view);
-
+        mProgressBar = findViewById(R.id.progress_Bar_weather_data);
         Retrofit dataRetreive = new Retrofit.Builder()
                 .baseUrl(ApiCall.weatherURL)
                 .addConverterFactory(GsonConverterFactory
                         .create()).build();
         ApiCall apiCall = dataRetreive.create(ApiCall.class);
-        Call<ListDataRetrieveModelClass> listDataRetrieveModelClassCall = apiCall.getWeatherData();
-        listDataRetrieveModelClassCall.enqueue(new Callback<ListDataRetrieveModelClass>() {
+        Call<WeatherAPIModel> listDataRetrieveModelClassCall = apiCall.getWeatherData();
+        listDataRetrieveModelClassCall.enqueue(new Callback<WeatherAPIModel>() {
             @Override
-            public void onResponse(Call<ListDataRetrieveModelClass> call, Response<ListDataRetrieveModelClass> response) {
-
-                ListDataRetrieveModelClass listDataRetrieveModelClass = response.body();
+            public void onResponse(Call<WeatherAPIModel> call, Response<WeatherAPIModel> response) {
+                WeatherAPIModel responseData = response.body();
                 //Getting the list Array by creating an object of ListDataRetreiveModelClass
-
-
-                ;
-                for (int i = 0; i < listDataRetrieveModelClass.getList().size(); i++) {
-
-
+                for (int i = 0; i < responseData.getList().size(); i++) {
                     //Getting the objects available inside list array
-
-                    RetrofitWeatherApiModelClass retrofitWeatherApiModelClass = listDataRetrieveModelClass.getList().get(i);
-                    String pressure = retrofitWeatherApiModelClass.getPressure();
-                    String humidity = retrofitWeatherApiModelClass.getHumidity();
-
-
+                    List<WeatherAPIModel> list = responseData.getList();
+                    String pressure = list.get(i).getPressure();
+                    String humidity = list.get(i).getHumidity();
                     //Getting the key - value pairs available inside weather list at index 0
-                    List<Weather> weatherJSONDataList = retrofitWeatherApiModelClass.getWeatherListData();
-                    Weather weatherData = weatherJSONDataList.get(0);
-                    String main = weatherData.getMain();
-                    String description = weatherData.getDescription();
-
-
-                    weatherAPIModelClassArrayList.add(new WeatherAPIModelClass(pressure, humidity, main, description));
+                    List<WeatherAPIModel> weather = list.get(i).getWeather();
+                    String main = weather.get(0).getMain();
+                    String description = weather.get(0).getDescription();
+                    if (!TextUtils.isEmpty(pressure) && (!TextUtils.isEmpty(humidity) && (!TextUtils.isEmpty(main) && (!TextUtils.isEmpty(description))))) {
+                        weatherAPIModelClassArrayList.add(new WeatherAPIModel(pressure, humidity, main, description));
+                    }
+                    mProgressBar.setVisibility(View.GONE);
+                    if (weatherAPIModelClassArrayList != null) {
+                        weatherDataDisplay.setLayoutManager(new LinearLayoutManager(ApiCallUsingRetrofit.this));
+                        weatherDataDisplay.setAdapter(new WeatherDataAdapter(weatherAPIModelClassArrayList));
+                        DividerItemDecoration itemDecoration = new DividerItemDecoration(ApiCallUsingRetrofit.this, LinearLayoutManager.VERTICAL);
+                        weatherDataDisplay.addItemDecoration(itemDecoration);
+                    } else {
+                        Toast.makeText(ApiCallUsingRetrofit.this, "List is Empty", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                weatherDataDisplay.setLayoutManager(new LinearLayoutManager(ApiCallUsingRetrofit.this));
-                weatherDataDisplay.setAdapter(new RetrofitWeatherAdapter(weatherAPIModelClassArrayList));
-                DividerItemDecoration itemDecoration = new DividerItemDecoration(ApiCallUsingRetrofit.this, LinearLayoutManager.VERTICAL);
-                weatherDataDisplay.addItemDecoration(itemDecoration);
             }
 
             @Override
-            public void onFailure(Call<ListDataRetrieveModelClass> call, Throwable t) {
+            public void onFailure(Call<WeatherAPIModel> call, Throwable t) {
                 String message = "no network connection";
                 Toast.makeText(ApiCallUsingRetrofit.this, message, Toast.LENGTH_SHORT).show();
             }
@@ -90,53 +81,3 @@ public class ApiCallUsingRetrofit extends AppCompatActivity {
 
 }
 
-class RetrofitWeatherAdapter extends RecyclerView.Adapter<RetrofitWeatherAdapter.WeatherListViewHolder> {
-    List<WeatherAPIModelClass> weatherList;
-
-    RetrofitWeatherAdapter(List<WeatherAPIModelClass> weatherList) {
-        this.weatherList = weatherList;
-    }
-
-    @Override
-    public WeatherListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-        View weatherView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.weather_list_item, parent, false);
-        return new WeatherListViewHolder(weatherView);
-    }
-
-    @Override
-    public void onBindViewHolder(WeatherListViewHolder holder, int position) {
-
-        WeatherAPIModelClass modelClass = weatherList.get(position);
-        String message = "pressure: " + modelClass.getPressure();
-        holder.pressureLevel.setText(message);
-        message = "Humidity: " + modelClass.getHumidity();
-        holder.humidityLevel.setText(message);
-        message = "Main Data: " + modelClass.getMain();
-        holder.weatherMain.setText(message);
-        message = "Description: " + modelClass.getDescription();
-        holder.weatherDescription.setText(message);
-    }
-
-    @Override
-    public int getItemCount() {
-        return weatherList.size();
-    }
-
-    class WeatherListViewHolder extends RecyclerView.ViewHolder {
-        TextView pressureLevel;
-        TextView humidityLevel;
-        TextView weatherMain;
-        TextView weatherDescription;
-
-        public WeatherListViewHolder(View itemView) {
-            super(itemView);
-            pressureLevel = itemView.findViewById(R.id.txt_pressure_level);
-            humidityLevel = itemView.findViewById(R.id.txt_humidity_level);
-            weatherMain = itemView.findViewById(R.id.txt_weather_main);
-            weatherDescription = itemView.findViewById(R.id.txt_weather_description);
-
-        }
-    }
-}

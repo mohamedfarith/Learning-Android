@@ -76,6 +76,7 @@
         <activity android:name=".services.ServiceActivity" />
 
         <service android:name=".services.WeatherIntentService" />
+        <service android:name=".services.ApiCallService" />
     </application>
 
 </manifest>

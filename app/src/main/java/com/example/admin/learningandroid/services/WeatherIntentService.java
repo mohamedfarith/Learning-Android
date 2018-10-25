@@ -5,7 +5,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 
-import com.example.admin.learningandroid.entity.WeatherAPIModelClass;
+import com.example.admin.learningandroid.entity.WeatherAPIModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import static com.example.admin.learningandroid.Constants.NOTIFICATION;
+import static com.example.admin.learningandroid.Constants.WEATHER_LIST;
 import static com.example.admin.learningandroid.Constants.WEATHER_URL;
 
 
@@ -48,7 +49,7 @@ public class WeatherIntentService extends IntentService {
                 stringBuilder.append(weatherJSONData);
             }
             String weatherData = stringBuilder.toString();
-            ArrayList<WeatherAPIModelClass> weatherListData = getJSONData(weatherData);
+            ArrayList<WeatherAPIModel> weatherListData = getJSONData(weatherData);
             sendBroadcastToActivity(weatherListData);
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -57,15 +58,15 @@ public class WeatherIntentService extends IntentService {
         }
     }
 
-    void sendBroadcastToActivity(ArrayList<WeatherAPIModelClass> weatherListData) {
+    void sendBroadcastToActivity(ArrayList<WeatherAPIModel> weatherListData) {
         Intent intent = new Intent(NOTIFICATION);
-        intent.putParcelableArrayListExtra("WEATHER_LIST", weatherListData);
+        intent.putParcelableArrayListExtra(WEATHER_LIST, weatherListData);
         sendBroadcast(intent);
     }
 
-    ArrayList<WeatherAPIModelClass> getJSONData(String weatherDataResponse) {
-        ArrayList<WeatherAPIModelClass> weatherDataList = new ArrayList<>();
-        JSONObject getData = null;
+    ArrayList<WeatherAPIModel> getJSONData(String weatherDataResponse) {
+        ArrayList<WeatherAPIModel> weatherDataList = new ArrayList<>();
+        JSONObject getData;
         String pressure;
         String humidity;
         String main;
@@ -73,7 +74,6 @@ public class WeatherIntentService extends IntentService {
         try {
             getData = new JSONObject(weatherDataResponse);
             JSONArray listArray = getData.getJSONArray("list");
-            //opening list array
             for (int i = 0; i < listArray.length(); i++) {
                 JSONObject listObject = listArray.getJSONObject(i);
                 pressure = listObject.getString("pressure");
@@ -82,7 +82,7 @@ public class WeatherIntentService extends IntentService {
                 JSONObject weatherList = weatherArray.getJSONObject(0);
                 main = weatherList.getString("main");
                 description = weatherList.getString("description");
-                weatherDataList.add(new WeatherAPIModelClass(pressure, humidity, main, description));
+                weatherDataList.add(new WeatherAPIModel(pressure, humidity, main, description));
             }
         } catch (JSONException e) {
             e.printStackTrace();
